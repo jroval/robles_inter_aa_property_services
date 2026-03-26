@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AA Property Services | Acceso clientes</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-container">
+      <div class="nav-left">
+        <a href="index.html" class="logo">
+          <img src="assets/img/AAP-S.svg" alt="Logo AA Property Services">
+        </a>
+        <a href="index.html" class="brand">AA Property Services</a>
+      </div>
+
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="servicios.html">Servicios</a></li>
+          <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-buttons">
+        <a href="login-clientes.html" class="btn btn-outline">Acceso clientes</a>
+        <a href="login-personal.html" class="btn btn-primary">Acceso personal</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="auth-section">
+      <div class="container auth-layout">
+        <div class="auth-content">
+          <p class="eyebrow">Área privada</p>
+          <h1>Acceso de clientes</h1>
+          <p class="auth-text">
+            Accede a tu espacio privado para consultar el estado de tu propiedad, revisar
+            servicios contratados, ver incidencias y consultar los últimos reportes.
+          </p>
+
+          <div class="auth-card">
+            <form class="contact-form" action="panel-clientes.html">
+              <div class="form-group">
+                <label for="cliente-email">Correo electrónico</label>
+                <input type="email" id="cliente-email" name="cliente-email" placeholder="cliente@correo.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="cliente-pass">Contraseña</label>
+                <input type="password" id="cliente-pass" name="cliente-pass" placeholder="Introduce tu contraseña" required>
+              </div>
+
+              <div class="auth-actions">
+                <button type="submit" class="btn btn-primary">Acceder</button>
+                <a href="index.html" class="btn btn-outline">Volver al inicio</a>
+              </div>
+            </form>
+
+            <div class="auth-links">
+              <a href="#">¿Has olvidado tu contraseña?</a>
+              <a href="#">Solicitar acceso</a>
+            </div>
+          </div>
+
+          <p class="auth-note">
+            Este acceso forma parte de la futura plataforma privada para propietarios de
+            AA Property Services.
+          </p>
+        </div>
+
+        <div class="auth-visual">
+          <div class="auth-image-card">
+            <img src="assets/img/POBLADO EXTERIOR- Vista 05.png" alt="Interior de villa de lujo">
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>AA Property Services</h3>
+        <p>Servicios exclusivos para el cuidado integral de propiedades.</p>
+      </div>
+
+      <div>
+        <h4>Enlaces</h4>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="servicios.html">Servicios</a></li>
+          <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Ubicación</h4>
+        <p>Oropesa del Mar</p>
+      </div>
+
+      <div>
+        <h4>Contacto</h4>
+        <p>info@aapropertyservices.com</p>
+        <p>+34 660 149 370</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
