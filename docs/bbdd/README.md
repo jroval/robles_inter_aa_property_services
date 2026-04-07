@@ -38,7 +38,7 @@ La entidad principal es VILLA, ya que conecta con propietario, complejo y plan.
 
 - `docs/bbdd/diagrama-er.png` → Diagrama entidad-relación
 - `docs/bbdd/modelo-relacional.md` → Modelo relacional
-- `docs/bbdd/aa_property_services_dump.sql` → Exportación completa de la base de datos
+
 
 ### Scripts SQL
 
