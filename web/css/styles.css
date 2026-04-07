@@ -180,6 +180,30 @@ textarea {
   flex-wrap: wrap;
   flex-shrink: 0;
 }
+.menu-toggle {
+  display: none;
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background-color: var(--color-white);
+  cursor: pointer;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  box-shadow: var(--shadow-soft);
+}
+
+.menu-toggle span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: var(--color-primary);
+  border-radius: 999px;
+  transition: var(--transition);
+}
 
 /* =========================
    BOTONES
@@ -1159,9 +1183,58 @@ textarea {
 
 @media (max-width: 900px) {
   .nav-container {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    padding: 16px 20px;
+    gap: 16px;
+  }
+
+  .nav-left {
+    min-width: 0;
+  }
+
+  .brand {
+    font-size: 1.1rem;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+  }
+
+  .main-nav,
+  .nav-buttons {
+    display: none;
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+
+  .site-header.menu-open .main-nav,
+  .site-header.menu-open .nav-buttons {
+    display: block;
+  }
+
+  .main-nav ul {
     flex-direction: column;
-    justify-content: center;
-    padding: 18px 20px;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 18px 0 8px;
+  }
+
+  .nav-buttons {
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    padding: 10px 0 0;
+  }
+
+  .site-header.menu-open .nav-buttons {
+    display: flex;
+  }
+
+  .nav-buttons .btn {
+    width: 100%;
+    text-align: center;
   }
 
   .hero-content,
@@ -1182,14 +1255,6 @@ textarea {
 
   .cards-5 {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .main-nav ul {
-    justify-content: center;
-  }
-
-  .nav-buttons {
-    justify-content: center;
   }
 
   .gallery-layout {
