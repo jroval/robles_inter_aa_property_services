@@ -29,13 +29,16 @@ public class IncidenciaDAO {
         }
     }
 
-    public List<Incidencia> listarIncidencias() {
+    public List<Incidencia> listarPorVilla(int idVilla) {
         List<Incidencia> lista = new ArrayList<>();
-        String sql = "SELECT * FROM incidencias";
+
+        String sql = "SELECT * FROM incidencias WHERE id_villa = ?";
 
         try (Connection conexion = ConexionBD.conectar();
-             Statement stmt = conexion.createStatement();
-             ResultSet rs = stmt.executeQuery(sql)) {
+             PreparedStatement stmt = conexion.prepareStatement(sql)) {
+
+            stmt.setInt(1, idVilla);
+            ResultSet rs = stmt.executeQuery();
 
             while (rs.next()) {
                 Incidencia incidencia = new Incidencia(

@@ -114,4 +114,31 @@ public class PropietarioDAO {
             return false;
         }
     }
+    public Propietario login(String email, String password) {
+        Propietario propietario = null;
+
+        String sql = "SELECT * FROM propietarios WHERE email = ? AND password_hash = ? AND activo = true";
+
+        try (Connection conn = ConexionBD.conectar();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+
+            ps.setString(1, email);
+            ps.setString(2, password);
+
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                propietario = new Propietario();
+                propietario.setIdVilla(rs.getInt("id_villa"));
+                propietario.setEmail(rs.getString("email"));
+                propietario.setRol(rs.getString("rol"));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return propietario;
+    }
+
 }

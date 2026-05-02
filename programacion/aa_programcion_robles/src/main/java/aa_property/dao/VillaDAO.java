@@ -59,22 +59,24 @@ public class VillaDAO {
         return lista;
     }
 
-    public Villa buscarVillaPorId(int id) {
-        String sql = "SELECT * FROM villas WHERE id_villa = ?";
+    public Villa buscarVillaPorId(int idVilla) {
+        Villa villa = null;
+
+        String sql = "SELECT * FROM villas WHERE id_villa = ? AND activa = true";
 
         try (Connection conexion = ConexionBD.conectar();
              PreparedStatement stmt = conexion.prepareStatement(sql)) {
 
-            stmt.setInt(1, id);
+            stmt.setInt(1, idVilla);
             ResultSet rs = stmt.executeQuery();
 
             if (rs.next()) {
-                return new Villa(
+                villa = new Villa(
                         rs.getInt("id_villa"),
                         rs.getString("codigo_villa"),
                         rs.getString("complejo"),
                         rs.getString("ubicacion"),
-                        (Integer) rs.getObject("id_propietario")
+                        null // 👈 ya no existe id_propietario
                 );
             }
 
@@ -82,7 +84,7 @@ public class VillaDAO {
             System.out.println("Error al buscar villa: " + e.getMessage());
         }
 
-        return null;
+        return villa;
     }
 
     public boolean actualizarVilla(Villa villa) {
@@ -126,4 +128,6 @@ public class VillaDAO {
             return false;
         }
     }
+
+
 }

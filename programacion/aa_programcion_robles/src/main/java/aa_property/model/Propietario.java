@@ -6,6 +6,10 @@ public class Propietario {
     private String apellidos;
     private String email;
     private String telefono;
+    private Integer idVilla;
+    private String passwordHash;
+    private String rol;
+    private boolean activo;
 
     public Propietario() {
     }
@@ -63,6 +67,38 @@ public class Propietario {
 
     public void setTelefono(String telefono) {
         this.telefono = telefono;
+    }
+
+    public Integer getIdVilla() {
+        return idVilla;
+    }
+
+    public void setIdVilla(Integer idVilla) {
+        this.idVilla = idVilla;
+    }
+
+    public String getPasswordHash() {
+        return passwordHash;
+    }
+
+    public void setPasswordHash(String passwordHash) {
+        this.passwordHash = passwordHash;
+    }
+
+    public String getRol() {
+        return rol;
+    }
+
+    public void setRol(String rol) {
+        this.rol = rol;
+    }
+
+    public boolean isActivo() {
+        return activo;
+    }
+
+    public void setActivo(boolean activo) {
+        this.activo = activo;
     }
 
     @Override
